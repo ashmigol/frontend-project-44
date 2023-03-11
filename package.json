@@ -1,0 +1,15 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "brain games",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "hexlet test"
+  },
+  "author": "iAnton Shmigol",
+  "license": "ISC",
+  "bin": {
+	            "brain-games": "bin/brain-games.js"
+  }
+}
