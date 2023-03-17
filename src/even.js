@@ -48,7 +48,7 @@ for (let i = 1 ; i<= 3; i +=1) {
     
 }
 
-return console.log(`Congratulations, ${name}`);
+return console.log(`Congratulations, ${name}!`);
 
 }
 
