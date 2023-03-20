@@ -10,7 +10,7 @@ export default () => {
   console.log("Welcome to the Brain Games!");
   name = readlineSync.question("May I have your name? ");
   console.log(`Hello ${name}`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  
 
   const correctMessage = () => {
     console.log("Correct!");
