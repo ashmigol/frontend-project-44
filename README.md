@@ -6,3 +6,5 @@ even:
 https://asciinema.org/connect/fb2614d7-2a7e-479c-8c47-92cfdbff108a
 calc:
 https://asciinema.org/connect/fb2614d7-2a7e-479c-8c47-92cfdbff108a
+gcd
+https://asciinema.org/connect/fb2614d7-2a7e-479c-8c47-92cfdbff108a
