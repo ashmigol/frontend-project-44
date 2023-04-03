@@ -28,9 +28,9 @@ export default () => {
       operator = "-";
     }
 
-    const question = firstNumber + operator + secondNumber;
+    const question = `Question: ${firstNumber} ${operator} ${secondNumber};`
     const correctAnswer = eval(question);
-    console.log(`Question: ${question}`);
+    console.log(question);
     const userAnswer = readlineSync.question("Your answer: ");
     if (Number(userAnswer) === correctAnswer) {
       correctMessage();
