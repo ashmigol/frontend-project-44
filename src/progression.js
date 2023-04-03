@@ -22,16 +22,15 @@ export default () => {
 
   let score = 0;
 
-
   name = greeting();
-  console.log(`What number is missing in the progression?`)
+  console.log(`What number is missing in the progression?`);
   for (let i = 1; i <= 3; i += 1) {
     let progress = progressArray();
-  let randomValue = Math.floor(Math.random() * 10);
-  let correctAnswer = 0;
-  correctAnswer = progress[randomValue];
-  progress[randomValue] = "..";
-    console.log(`Question: ${progress}`);
+    let randomValue = Math.floor(Math.random() * 10);
+    let correctAnswer = 0;
+    correctAnswer = progress[randomValue];
+    progress[randomValue] = "..";
+    console.log(`Question: ${progress.join(" ")}`);
     const userAnswer = readlineSync.question("Your answer: ");
     if (Number(userAnswer) === correctAnswer) {
       correctMessage();
