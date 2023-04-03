@@ -33,7 +33,7 @@ export default () => {
         `${question} is wrong answer ;(. Correct answer was ${answerArr[1]}.\nLet's try again, ${name}!`
       );
       return;
-    } else if (question !== answerArr[0] && answerArr[1]) {
+    } else if (question !== answerArr[0] && question !== answerArr[1]) {
       console.log(
         `${question} is wrong answer ;(. Correct answer was ${answerArr[1]}.\nLet's try again, ${name}!`
       );
