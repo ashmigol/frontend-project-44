@@ -10,7 +10,6 @@ export default () => {
   console.log("Welcome to the Brain Games!");
   name = readlineSync.question("May I have your name? ");
   console.log(`Hello ${name}`);
-  
 
   const correctMessage = () => {
     console.log("Correct!");
@@ -22,7 +21,7 @@ export default () => {
   for (let i = 1; i <= 3; i += 1) {
     let number = Math.floor(Math.random() * 101);
 
-    const question = readlineSync.question(`Question ${number}\n`);
+    const question = readlineSync.question(`Question: ${number}\n`);
     if (number % 2 === 0 && question === answerArr[1]) {
       console.log(
         `${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.\nLet's try again, ${name}!`
