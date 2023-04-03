@@ -36,7 +36,7 @@ export default () => {
       correctMessage();
     } else {
       console.log(
-        `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\n Let's try again, ${name}`
+        `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\n Let's try again, ${name}!`
       );
       return;
     }
