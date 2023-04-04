@@ -16,8 +16,8 @@ export default () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    let firstNumber = Math.floor(Math.random() * 101);
-    let secondNumber = Math.floor(Math.random() * 101);
+    const firstNumber = Math.floor(Math.random() * 101);
+    const secondNumber = Math.floor(Math.random() * 101);
     const randomNumber = Math.random();
     let operator;
     if (randomNumber < 0.33) {
@@ -29,7 +29,7 @@ export default () => {
     }
 
     const question = `Question: ${firstNumber} ${operator} ${secondNumber};`;
-    const correctAnswer = eval(question);
+    const correctAnswer = Function(question);
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === correctAnswer) {
