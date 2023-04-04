@@ -1,19 +1,19 @@
-import readlineSync from "readline-sync";
-import greeting from "./index.js";
+import readlineSync from 'readline-sync';
+import greeting from './index.js';
 
 export default () => {
   let number = Math.floor(Math.random() * 101);
   let score = 0;
-  let name = "";
-  const answerArr = ["yes", "no"];
+  let name = '';
+  const answerArr = ['yes', 'no'];
 
-  console.log("Welcome to the Brain Games!");
-  name = readlineSync.question("May I have your name? ");
+  console.log('Welcome to the Brain Games!');
+  name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const correctMessage = () => {
-    console.log("Correct!");
+    console.log('Correct!');
     score += 1;
   };
 

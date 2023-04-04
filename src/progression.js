@@ -1,5 +1,5 @@
-import readlineSync from "readline-sync";
-import greeting from "./index.js";
+import readlineSync from 'readline-sync';
+import greeting from './index.js';
 
 export default () => {
   const progressArray = () => {
@@ -14,9 +14,9 @@ export default () => {
     }
     return progress;
   };
-  let name = "";
+  let name = '';
   const correctMessage = () => {
-    console.log("Correct!");
+    console.log('Correct!');
     score += 1;
   };
 
@@ -29,9 +29,9 @@ export default () => {
     let randomValue = Math.floor(Math.random() * 10);
     let correctAnswer = 0;
     correctAnswer = progress[randomValue];
-    progress[randomValue] = "..";
-    console.log(`Question: ${progress.join(" ")}`);
-    const userAnswer = readlineSync.question("Your answer: ");
+    progress[randomValue] = '..';
+    console.log(`Question: ${progress.join(' ')}`);
+    const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === correctAnswer) {
       correctMessage();
     } else {

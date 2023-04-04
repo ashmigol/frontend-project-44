@@ -1,12 +1,12 @@
-import readlineSync from "readline-sync";
-import greeting from "./index.js";
+import readlineSync from 'readline-sync';
+import greeting from './index.js';
 
 export default () => {
   let score = 0;
-  let name = "";
+  let name = '';
 
   const correctMessage = () => {
-    console.log("Correct!");
+    console.log('Correct!');
     score += 1;
   };
 
@@ -22,14 +22,14 @@ export default () => {
   };
 
   name = greeting();
-  console.log("Find the greatest common divisor of given numbers.");
+  console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {
     let firstNumber = Math.floor(Math.random() * 1001);
     let secondNumber = Math.floor(Math.random() * 1001);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
 
-    const userAnswer = readlineSync.question("Your answer: ");
+    const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === correctAnswer(firstNumber, secondNumber)) {
       correctMessage();
     } else {
