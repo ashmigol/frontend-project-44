@@ -4,9 +4,7 @@ export default () => {
   let name = '';
 
   const correctMessage = () => {
-    let score = 0;
     console.log('Correct!');
-    score += 1;
   };
 
   console.log('Welcome to the Brain Games!');

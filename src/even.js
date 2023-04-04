@@ -8,9 +8,7 @@ export default () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const correctMessage = () => {
-    let score = 0;
     console.log('Correct!');
-    score += 1;
   };
 
   for (let i = 1; i <= 3; i += 1) {
