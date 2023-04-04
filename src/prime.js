@@ -11,7 +11,7 @@ export default () => {
   };
 
   name = greeting();
-  console.log('Answer \'yes\' if given number is prime. Otherwise answer \'no\'.');
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let j = 0; j < 3; j += 1) {
     const n = Math.floor(Math.random() * 101);
