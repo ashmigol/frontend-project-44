@@ -2,13 +2,13 @@ import readlineSync from 'readline-sync';
 import greeting from './index.js';
 
 export default () => {
-  let score = 0;
   const name = greeting();
-  const answerArr = ['yes', 'no'];
+  const answerArr = ['yes', 'no',];
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
   const correctMessage = () => {
+    let score = 0;
     console.log('Correct!');
     score += 1;
   };

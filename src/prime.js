@@ -3,9 +3,9 @@ import greeting from './index.js';
 
 export default () => {
   let name = '';
-  let score = 0;
 
   const correctMessage = () => {
+    let score = 0;
     console.log('Correct!');
     score += 1;
   };

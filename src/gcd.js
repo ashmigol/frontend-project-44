@@ -2,10 +2,10 @@ import readlineSync from 'readline-sync';
 import greeting from './index.js';
 
 export default () => {
-  let score = 0;
   let name = '';
 
   const correctMessage = () => {
+    let score = 0;
     console.log('Correct!');
     score += 1;
   };
@@ -27,9 +27,9 @@ export default () => {
   for (let i = 1; i <= 3; i += 1) {
     const firstNumber = Math.floor(Math.random() * 1001);
     const secondNumber = Math.floor(Math.random() * 1001);
-    console.log(`Question: ${firstNumber} ${secondNumber}`);
+    console.log(`Question: ${firstNumber} ${secondNumber}`,);
 
-    const userAnswer = readlineSync.question('Your answer: ');
+    const userAnswer = readlineSync.question('Your answer: ',);
     if (Number(userAnswer) === correctAnswer(firstNumber, secondNumber)) {
       correctMessage();
     } else {

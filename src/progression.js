@@ -9,19 +9,19 @@ export default () => {
     const progress = [startNum];
 
     for (let i = 0; i < 9; i++) {
-      progress.push((startNum + (i + 1) * multiplier));
+      progress.push(startNum + (i + 1) * multiplier);
     }
     return progress;
   };
-  
+
   const correctMessage = () => {
     console.log('Correct!');
   };
 
   const name = greeting();
-  console.log(`What number is missing in the progression?`);
+  console.log('What number is missing in the progression?');
   let score = 0;
-  
+
   for (let i = 1; i <= 3; i++) {
     const progress = progressArray();
     const randomValue = Math.floor(Math.random() * 10);
@@ -34,7 +34,7 @@ export default () => {
       score += 1;
     } else {
       console.log(
-        `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\n Let's try again, ${name}!`
+        `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`
       );
       return;
     }

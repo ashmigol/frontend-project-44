@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
 export default () => {
-  let score = 0;
   let name = '';
 
   const correctMessage = () => {
+    let score = 0;
     console.log('Correct!');
     score += 1;
   };
@@ -28,8 +28,16 @@ export default () => {
       operator = '-';
     }
 
+    let correctAnswer;
+    if (operator === '+') {
+      correctAnswer = firstNumber + secondNumber;
+    } else if (operator === '-') {
+      correctAnswer = firstNumber - secondNumber;
+    } else {
+      correctAnswer = firstNumber * secondNumber;
+    }
+
     const question = `Question: ${firstNumber} ${operator} ${secondNumber}`;
-    const correctAnswer = eval(question);
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === correctAnswer) {
@@ -41,4 +49,3 @@ export default () => {
   }
   console.log(`Congratulations, ${name}!`);
 };
-
