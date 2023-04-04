@@ -25,9 +25,9 @@ export default () => {
   for (let i = 1; i <= 3; i += 1) {
     const firstNumber = Math.floor(Math.random() * 1001 + 1);
     const secondNumber = Math.floor(Math.random() * 1001 + 1);
-    console.log(`Question: ${firstNumber} ${secondNumber}`,);
+    console.log(`Question: ${firstNumber} ${secondNumber}`);
 
-    const userAnswer = readlineSync.question('Your answer: ',);
+    const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === correctAnswer(firstNumber, secondNumber)) {
       correctMessage();
     } else {
