@@ -11,9 +11,9 @@ export default () => {
   };
 
   const correctAnswer = (a, b) => {
-    let min = Math.min(a, b);
+    const min = Math.min(a, b);
     let result = 1;
-    for (let i = 2; i <= min; i++) {
+    for (let i = 2; i <= min; i += 1) {
       if (a % i === 0 && b % i === 0) {
         result = i;
       }
@@ -25,8 +25,8 @@ export default () => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {
-    let firstNumber = Math.floor(Math.random() * 1001);
-    let secondNumber = Math.floor(Math.random() * 1001);
+    const firstNumber = Math.floor(Math.random() * 1001);
+    const secondNumber = Math.floor(Math.random() * 1001);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
 
     const userAnswer = readlineSync.question('Your answer: ');
@@ -42,5 +42,5 @@ export default () => {
       return;
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
 };

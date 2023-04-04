@@ -3,37 +3,35 @@ import greeting from './index.js';
 
 export default () => {
   const progressArray = () => {
-    let startNum = Math.floor(Math.random() * 10);
-    let multiplier = Math.floor(Math.random() * 10);
+    const startNum = Math.floor(Math.random() * 10);
+    const multiplier = Math.floor(Math.random() * 10);
 
-    let progress = [startNum];
+    const progress = [startNum];
 
     for (let i = 0; i < 9; i++) {
-      startNum = startNum + multiplier;
-      progress.push(startNum);
+      progress.push((startNum + (i + 1) * multiplier));
     }
     return progress;
   };
-  let name = '';
+  
   const correctMessage = () => {
     console.log('Correct!');
-    score += 1;
   };
 
-  let score = 0;
-
-  name = greeting();
+  const name = greeting();
   console.log(`What number is missing in the progression?`);
-  for (let i = 1; i <= 3; i += 1) {
-    let progress = progressArray();
-    let randomValue = Math.floor(Math.random() * 10);
-    let correctAnswer = 0;
-    correctAnswer = progress[randomValue];
+  let score = 0;
+  
+  for (let i = 1; i <= 3; i++) {
+    const progress = progressArray();
+    const randomValue = Math.floor(Math.random() * 10);
+    const correctAnswer = progress[randomValue];
     progress[randomValue] = '..';
     console.log(`Question: ${progress.join(' ')}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === correctAnswer) {
       correctMessage();
+      score += 1;
     } else {
       console.log(
         `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\n Let's try again, ${name}!`
@@ -41,5 +39,5 @@ export default () => {
       return;
     }
   }
-  return console.log(`Congratulations, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
 };
