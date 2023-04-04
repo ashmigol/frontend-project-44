@@ -3,7 +3,7 @@ import greeting from './index.js';
 
 export default () => {
   const name = greeting();
-  const answerArr = ['yes', 'no',];
+  const answerArr = ['yes', 'no'];
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
