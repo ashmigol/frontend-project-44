@@ -29,7 +29,7 @@ export default () => {
     }
 
     const question = `Question: ${firstNumber} ${operator} ${secondNumber};`;
-    const correctAnswer = Function(question);
+    const correctAnswer = eval(question);
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
     if (Number(userAnswer) === correctAnswer) {
