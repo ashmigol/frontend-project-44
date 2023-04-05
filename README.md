@@ -71,4 +71,4 @@
  brain-prime # запуск игры
 ```
 
- https://asciinema.org/a/R2Mr4k6lXVRSRYGafq0pQGBai
+ [![asciicast]( https://asciinema.org/a/R2Mr4k6lXVRSRYGafq0pQGBai.svg)]( https://asciinema.org/a/R2Mr4k6lXVRSRYGafq0pQGBai)
