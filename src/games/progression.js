@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from '../index.js';
 
-
 export default () => {
   const progressArray = () => {
     const startNum = Math.floor(Math.random() * 10);

@@ -15,7 +15,7 @@ export default () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    const firstNumber = rndmNum(); 
+    const firstNumber = rndmNum();
     const secondNumber = rndmNum();
     let operator;
     const randomNumber = Math.random();
