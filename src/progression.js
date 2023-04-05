@@ -31,9 +31,9 @@ export default () => {
     if (Number(userAnswer) === correctAnswer) {
       correctMessage();
     } else {
-      console.log(
-        `${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`
-      );
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${name}!`);
+
       return;
     }
   }

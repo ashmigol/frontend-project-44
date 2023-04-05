@@ -17,22 +17,23 @@ export default () => {
 
     if (number % 2 === 0 && question === answerArr[1]) {
       console.log(
-        `${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.\nLet's try again, ${name}!`
+        `${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.`
       );
+      console.log(`Let's try again, ${name}!`);
       return;
     }
 
     if (number % 2 !== 0 && question === answerArr[0]) {
       console.log(
-        `${question} is wrong answer ;(. Correct answer was ${answerArr[1]}.\nLet's try again, ${name}!`
+        `${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.`
       );
+      console.log(`Let's try again, ${name}!`);
       return;
     }
 
     if (question !== answerArr[0] && question !== answerArr[1]) {
-      console.log(
-        `${question} is wrong answer ;(. Correct answer was ${answerArr[1]}.\nLet's try again, ${name}!`
-      );
+      console.log(`${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
 
