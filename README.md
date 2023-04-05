@@ -21,7 +21,6 @@
 ```
 ```
  npm link
-
 ```
  ## Описание и пример запуска игры "Калькулятор". Демонстрация победы и поражения.
  
@@ -30,8 +29,8 @@
  ``` 
  brain-calc  # запуск игры 
  ```
+[![asciicast](https://asciinema.org/a/S5f6Zthz1PwAQIc76x7zv4mZD.svg)](https://asciinema.org/a/S5f6Zthz1PwAQIc76x7zv4mZD)
 
-https://asciinema.org/a/S5f6Zthz1PwAQIc76x7zv4mZD
   
  ## Описание и пример запуска игры "Проверка на четность". Демонстрация победы и поражения.
 
@@ -40,8 +39,7 @@ https://asciinema.org/a/S5f6Zthz1PwAQIc76x7zv4mZD
 ```
  brain-even # запуск игры
 ```
-https://asciinema.org/a/y3duBMM8nVAz7tflqX1n27trl
-
+[![asciicast](https://asciinema.org/a/y3duBMM8nVAz7tflqX1n27trl.svg)](https://asciinema.org/a/y3duBMM8nVAz7tflqX1n27trl)
 
 
 
@@ -51,8 +49,7 @@ https://asciinema.org/a/y3duBMM8nVAz7tflqX1n27trl
  ```
  Игроку показывается два случайных числа. Игрок должен вычислить и ввести наибольший общий делитель этих чисел.
  
-https://asciinema.org/a/soolKuyTkVCijifkGBYtstzdk
-
+[![asciicast](https://asciinema.org/a/soolKuyTkVCijifkGBYtstzdk.svg)](https://asciinema.org/a/soolKuyTkVCijifkGBYtstzdk)
 
 
 
@@ -64,8 +61,7 @@ https://asciinema.org/a/soolKuyTkVCijifkGBYtstzdk
  brain-progression # запуск игры
  ```
 
- https://asciinema.org/a/Zu1T962Rob0NdcsjLbjToxMi3
-
+[![asciicast]( https://asciinema.org/a/Zu1T962Rob0NdcsjLbjToxMi3.svg)]( https://asciinema.org/a/Zu1T962Rob0NdcsjLbjToxMi3)
 
  ## Описание и пример запуска игры "Простое ли число?". Демонстрация победы и поражения.
  
