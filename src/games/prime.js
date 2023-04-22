@@ -13,7 +13,7 @@ export default () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let j = 0; j < 3; j += 1) {
-    const n = randomNum();
+    const n = randomNum(100);
     let correctAnswer = '';
     const checkPrimeNumber = () => {
       if (n <= 1) {

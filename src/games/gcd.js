@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from '../index.js';
+import randomNum from '../utils.js';
 
 export default () => {
   let name = '';
@@ -23,8 +24,8 @@ export default () => {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let i = 1; i <= 3; i += 1) {
-    const firstNumber = Math.floor(Math.random() * 1001 + 1);
-    const secondNumber = Math.floor(Math.random() * 1001 + 1);
+    const firstNumber = randomNum(1000);
+    const secondNumber = randomNum(1000);
     console.log(`Question: ${firstNumber} ${secondNumber}`);
 
     const userAnswer = readlineSync.question('Your answer: ');

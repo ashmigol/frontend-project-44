@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from '../index.js';
+import randomNum from '../utils.js';
 
 export default () => {
   const progressArray = () => {
@@ -23,7 +24,7 @@ export default () => {
 
   for (let i = 1; i <= 3; i += 1) {
     const progress = progressArray();
-    const randomValue = Math.floor(Math.random() * 10);
+    const randomValue = randomNum(10);
     const correctAnswer = progress[randomValue];
     progress[randomValue] = '..';
     console.log(`Question: ${progress.join(' ')}`);

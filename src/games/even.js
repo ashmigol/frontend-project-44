@@ -11,7 +11,7 @@ export default () => {
   const correctMessage = () => { console.log('Correct!'); };
 
   for (let i = 1; i <= 3; i += 1) {
-    const number = randomNum();
+    const number = randomNum(100);
     const question = readlineSync.question(`Question: ${number}\n`);
 
     if (number % 2 === 0 && question === answerArr[1]) {

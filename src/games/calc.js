@@ -15,8 +15,8 @@ export default () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    const firstNumber = randomNum();
-    const secondNumber = randomNum();
+    const firstNumber = randomNum(100);
+    const secondNumber = randomNum(100);
     let operator;
     const randomNumber = Math.random();
     if (randomNumber < 0.33) {
