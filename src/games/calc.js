@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import rndmNum from '../utils.js';
+import randomNum from '../utils.js';
 
 export default () => {
   let name = '';
@@ -15,8 +15,8 @@ export default () => {
   console.log('What is the result of the expression?');
 
   for (let i = 1; i <= 3; i += 1) {
-    const firstNumber = rndmNum();
-    const secondNumber = rndmNum();
+    const firstNumber = randomNum();
+    const secondNumber = randomNum();
     let operator;
     const randomNumber = Math.random();
     if (randomNumber < 0.33) {

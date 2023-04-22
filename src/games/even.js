@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from '../index.js';
-import rndmNum from '../utils.js';
+import randomNum from '../utils.js';
 
 export default () => {
   const name = greeting();
@@ -11,7 +11,7 @@ export default () => {
   const correctMessage = () => { console.log('Correct!'); };
 
   for (let i = 1; i <= 3; i += 1) {
-    const number = rndmNum();
+    const number = randomNum();
     const question = readlineSync.question(`Question: ${number}\n`);
 
     if (number % 2 === 0 && question === answerArr[1]) {

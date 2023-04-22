@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import greeting from '../index.js';
-import rndmNum from '../utils.js';
+import randomNum from '../utils.js';
 
 export default () => {
   let name = '';
@@ -13,7 +13,7 @@ export default () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
   for (let j = 0; j < 3; j += 1) {
-    const n = rndmNum();
+    const n = randomNum();
     let correctAnswer = '';
     const checkPrimeNumber = () => {
       if (n <= 1) {
