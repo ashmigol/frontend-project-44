@@ -4,8 +4,8 @@ import randomNum from '../utils.js';
 
 export default () => {
   const progressArray = () => {
-    const startNum = Math.floor(Math.random() * 10);
-    const multiplier = Math.floor(Math.random() * 10);
+    const startNum = randomNum(10);
+    const multiplier = randomNum(10);
 
     const progress = [startNum];
 
