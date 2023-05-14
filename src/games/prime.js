@@ -1,20 +1,13 @@
 import readlineSync from 'readline-sync';
-import greeting from '../index.js';
+import game from '../index.js';
 import randomNum from '../utils.js';
 
-export default () => {
-  let name = '';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  const correctMessage = () => {
-    console.log('Correct!');
-  };
+const generateRound = () => {
 
-  name = greeting();
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  for (let j = 0; j < 3; j += 1) {
-    const n = randomNum(100);
-    let correctAnswer = '';
+    const n = randomNum(1, 100);
+    const question = `${n}`;
     const checkPrimeNumber = () => {
       if (n <= 1) {
         return false;
@@ -26,21 +19,17 @@ export default () => {
       }
       return true;
     };
+
+    let correctAnswer;
+
     if (checkPrimeNumber() === false) {
       correctAnswer = 'no';
     } else if (checkPrimeNumber() === true) {
       correctAnswer = 'yes';
     }
+    return [question, correctAnswer];
+};
 
-    console.log(`Question: ${n}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === correctAnswer) {
-      correctMessage();
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+export default () => {
+  game(description, generateRound);
 };

@@ -1,50 +1,37 @@
 import readlineSync from 'readline-sync';
 import randomNum from '../utils.js';
+import game from '../index.js';
 
-export default () => {
-  let name = '';
+const description = 'What is the result of the expression?';
 
-  const correctMessage = () => {
-    console.log('Correct!');
+const generateRound = () => {
+  const firstNumber = randomNum(1, 100);
+  const secondNumber = randomNum(1, 100);
+  
+  let operator;
+  const randomNumber = Math.random();
+  if (randomNumber < 0.33) {
+    operator = '+';
+  } else if (randomNumber < 0.66) {
+    operator = '*';
+  } else {
+    operator = '-';
+  }
+
+  let correctAnswer;
+
+  if (operator === '+') {
+    correctAnswer = firstNumber + secondNumber;
+  } else if (operator === '-') {
+    correctAnswer = firstNumber - secondNumber;
+  } else {
+    correctAnswer = firstNumber * secondNumber;
   };
 
-  console.log('Welcome to the Brain Games!');
-  name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}`);
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  return [question, String(correctAnswer)];
+};
 
-  console.log('What is the result of the expression?');
-
-  for (let i = 1; i <= 3; i += 1) {
-    const firstNumber = randomNum(100);
-    const secondNumber = randomNum(100);
-    let operator;
-    const randomNumber = Math.random();
-    if (randomNumber < 0.33) {
-      operator = '+';
-    } else if (randomNumber < 0.66) {
-      operator = '*';
-    } else {
-      operator = '-';
-    }
-
-    let correctAnswer;
-    if (operator === '+') {
-      correctAnswer = firstNumber + secondNumber;
-    } else if (operator === '-') {
-      correctAnswer = firstNumber - secondNumber;
-    } else {
-      correctAnswer = firstNumber * secondNumber;
-    }
-
-    const question = `Question: ${firstNumber} ${operator} ${secondNumber}`;
-    console.log(question);
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (Number(userAnswer) === correctAnswer) {
-      correctMessage();
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\n Let's try again, ${name}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+export default () => {
+  game(description, generateRound);
 };

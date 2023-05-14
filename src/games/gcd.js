@@ -1,41 +1,34 @@
 import readlineSync from 'readline-sync';
-import greeting from '../index.js';
+import game from '../index.js';
 import randomNum from '../utils.js';
 
-export default () => {
-  let name = '';
+const description = 'Find the greatest common divisor of given numbers.';
 
-  const correctMessage = () => {
-    console.log('Correct!');
-  };
+const generateRound = () => {
 
-  const correctAnswer = (a, b) => {
-    const min = Math.min(a, b);
-    let result = 1;
-    for (let i = 2; i <= min; i += 1) {
-      if (a % i === 0 && b % i === 0) {
-        result = i;
+
+  
+    const firstNumber = randomNum(1, 1000);
+    const secondNumber = randomNum(1, 1000);
+    const question =  `${firstNumber} ${secondNumber}`;
+
+
+    const correctAnswer = (num1, num2) => {
+      const min = Math.min(num1, num2);
+      let result = 1;
+      for (let i = 2; i <= min; i += 1) {
+        if (num1 % i === 0 && num2 % i === 0) {
+          result = i;
+        }
       }
-    }
-    return result;
-  };
+      return String(result);
+    };
 
-  name = greeting();
-  console.log('Find the greatest common divisor of given numbers.');
+    return [question, correctAnswer(firstNumber, secondNumber)];
 
-  for (let i = 1; i <= 3; i += 1) {
-    const firstNumber = randomNum(1000);
-    const secondNumber = randomNum(1000);
-    console.log(`Question: ${firstNumber} ${secondNumber}`);
+}
+    export default () => {
+      game(description, generateRound);
+    };
 
-    const userAnswer = readlineSync.question('Your answer: ');
-    if (Number(userAnswer) === correctAnswer(firstNumber, secondNumber)) {
-      correctMessage();
-    } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer(firstNumber, secondNumber)}'.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
-};
+  

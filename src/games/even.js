@@ -1,39 +1,28 @@
 import readlineSync from 'readline-sync';
-import greeting from '../index.js';
+import game from '../index.js';
 import randomNum from '../utils.js';
 
-export default () => {
-  const name = greeting();
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const generateRound = () => {
+
   const answerArr = ['yes', 'no'];
+  const number = randomNum(1, 100);
+  const question = `${number}\n`;
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  let correctAnswer;
 
-  const correctMessage = () => { console.log('Correct!'); };
-
-  for (let i = 1; i <= 3; i += 1) {
-    const number = randomNum(100);
-    const question = readlineSync.question(`Question: ${number}\n`);
-
-    if (number % 2 === 0 && question === answerArr[1]) {
-      console.log(`${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
+    if (number % 2 === 0) {
+      correctAnswer = answerArr[0];
     }
 
-    if (number % 2 !== 0 && question === answerArr[0]) {
-      console.log(`${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
+    if (number % 2 !== 0) {
+      correctAnswer = answerArr[1];
     }
+    
+    return [question, correctAnswer];
+  };
 
-    if (question !== answerArr[0] && question !== answerArr[1]) {
-      console.log(`${question} is wrong answer ;(. Correct answer was ${answerArr[0]}.`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
-
-    correctMessage();
-  }
-
-  console.log(`Congratulations, ${name}!`);
-};
+  export default () => {
+    game(description, generateRound);
+  };
