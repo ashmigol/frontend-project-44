@@ -11,7 +11,7 @@ const generateRound = () => {
   let correctAnswer;
 
   if (number % 2 === 0) {
-    const [correctAnswer,] = answerArr;
+    const [correctAnswer] = answerArr;
   }
 
   if (number % 2 !== 0) {
