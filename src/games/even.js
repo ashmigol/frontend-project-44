@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import game from '../index.js';
 import randomNum from '../utils.js';
 
@@ -12,11 +11,11 @@ const generateRound = () => {
   let correctAnswer;
 
   if (number % 2 === 0) {
-    correctAnswer = answerArr[0];
+    const [correctAnswer,] = answerArr;
   }
 
   if (number % 2 !== 0) {
-    correctAnswer = answerArr[1];
+    const [, correctAnswer] = answerArr;
   }  
   return [question, correctAnswer];
 };

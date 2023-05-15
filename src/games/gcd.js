@@ -6,7 +6,7 @@ const description = 'Find the greatest common divisor of given numbers.';
 const generateRound = () => {
   const firstNumber = randomNum(1, 1000);
   const secondNumber = randomNum(1, 1000);
-  const question =  `${firstNumber} ${secondNumber}`;
+  const question = `${firstNumber} ${secondNumber}`;
 
   const correctAnswer = (num1, num2) => {
     const min = Math.min(num1, num2);
@@ -19,7 +19,7 @@ const generateRound = () => {
     return String(result);
   };
   return [question, correctAnswer(firstNumber, secondNumber)];
-}
+};
 
 export default () => {
   game(description, generateRound);
