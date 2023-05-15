@@ -11,7 +11,7 @@ const generateRound = () => {
   if (randomNumber < 0.33) {
     operator = '+';
   } else if (randomNumber < 0.66) {
-operator = '*';
+    operator = '*';
   } else {
     operator = '-';
   }
