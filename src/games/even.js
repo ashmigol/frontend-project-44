@@ -11,12 +11,10 @@ const generateRound = () => {
   let correctAnswer;
 
   if (number % 2 === 0) {
-    const [correctAnswer] = answerArr;
+    correctAnswer = answerArr[0];
+  } else {
+    correctAnswer = answerArr[1];
   }
-
-  if (number % 2 !== 0) {
-    const [, correctAnswer] = answerArr;
-  }  
   return [question, correctAnswer];
 };
 
