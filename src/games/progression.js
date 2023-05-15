@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import game from '../index.js';
 import randomNum from '../utils.js';
 
@@ -16,9 +15,8 @@ const generateRound = () => {
     return progress;
   };
 
-
   const progress = progressArray();
-  const randomValue = randomNum(0,9);
+  const randomValue = randomNum(0, 9);
   const correctAnswer = String(progress[randomValue]);
   progress[randomValue] = '..';
   const question = `${progress.join(' ')}`;
