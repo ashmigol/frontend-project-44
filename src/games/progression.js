@@ -1,10 +1,10 @@
 import game from '../index.js';
-import randomNum from '../utils.js';
+import { randomNum, getRandomIndex } from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
 const generateRound = () => {
-  const progressArray = () => {
+  const setProgressArray = () => {
     const startNum = randomNum(1, 10);
     const multiplier = randomNum(1, 10);
     const progress = [startNum];
@@ -15,11 +15,11 @@ const generateRound = () => {
     return progress;
   };
 
-  const progress = progressArray();
-  const randomValue = randomNum(0, 9);
-  const correctAnswer = String(progress[randomValue]);
-  progress[randomValue] = '..';
-  const question = `${progress.join(' ')}`;
+  const progress = setProgressArray();
+  const index = getRandomIndex(progress.length);
+  const correctAnswer = String(progress[index]);
+  progress[index] = '..';
+  const question = progress.join(' ');
 
   return [question, correctAnswer];
 };

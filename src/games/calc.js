@@ -1,33 +1,33 @@
-import randomNum from '../utils.js';
 import game from '../index.js';
+import {arrayChoise, randomNum} from '../utils.js';
 
 const description = 'What is the result of the expression?';
+const operatorArray = ['+', '*', '-'];
 
 const generateRound = () => {
-  const firstNumber = randomNum(1, 100);
-  const secondNumber = randomNum(1, 100);
+  const num1 = randomNum(1, 100);
+  const num2 = randomNum(1, 100);
   let operator;
-  const randomNumber = Math.random();
-  if (randomNumber < 0.33) {
-    operator = '+';
-  } else if (randomNumber < 0.66) {
-    operator = '*';
-  } else {
-    operator = '-';
-  }
-
-  let correctAnswer;
-
-  if (operator === '+') {
-    correctAnswer = firstNumber + secondNumber;
-  } else if (operator === '-') {
-    correctAnswer = firstNumber - secondNumber;
-  } else {
-    correctAnswer = firstNumber * secondNumber;
-  }
-
-  const question = `${firstNumber} ${operator} ${secondNumber}`;
-  return [question, String(correctAnswer)];
+  operator = arrayChoise(operatorArray);
+  const answer = (num1, operator, num2) => {
+    let correctAnswer;
+    switch (operator) {
+      case '+':
+        correctAnswer = num1 + num2;
+        break;
+      case '-':
+        correctAnswer = num1 - num2;
+        break;
+      case '*':
+        correctAnswer = num1 * num2;
+        break;
+      default:
+        throw new Error(`Invalid operator: ${operator}`);
+    }
+    return correctAnswer;
+  };
+  const question = `${num1} ${operator} ${num2}`;
+  return [question, String(answer(num1, operator, num2))];
 };
 
 export default () => {
