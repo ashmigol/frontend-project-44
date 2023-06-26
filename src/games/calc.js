@@ -1,5 +1,5 @@
 import game from '../index.js';
-import { arrayChoise, randomNum } from '../utils.js';
+import { arrayChoice, randomNum } from '../utils.js';
 
 const description = 'What is the result of the expression?';
 const operatorArray = ['+', '*', '-'];
@@ -7,7 +7,7 @@ const operatorArray = ['+', '*', '-'];
 const generateRound = () => {
   const num1 = randomNum(1, 100);
   const num2 = randomNum(1, 100);
-  const operator = arrayChoise(operatorArray);
+  const operator = arrayChoice(operatorArray);
   const calculateAnswer = (n1, op, n2) => {
     let correctAnswer;
     switch (op) {
