@@ -8,14 +8,16 @@ const generateRound = () => {
   const secondNum = randomNum(1, 1000);
   const question = `${firstNum} ${secondNum}`;
 
-const findGcd = (num1, num2) => {
-  while (num2 !== 0) {
-    const temp = num2;
-    num2 = num1 % num2;
-    num1 = temp;
-  }
-  return String(num1);
-};
+  const findGcd = (num1, num2) => {
+    let a = num1;
+    let b = num2;
+    while (b !== 0) {
+      const temp = b;
+      b = a % b;
+      a = temp;
+    }
+    return String(a);
+  };
 
   return [question, findGcd(firstNum, secondNum)];
 };
