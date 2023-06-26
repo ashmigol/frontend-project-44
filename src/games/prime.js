@@ -3,7 +3,7 @@ import { randomNum } from '../utils.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = () => {
+const isPrime = (n) => {
   if (n <= 1) {
     return false;
   }
@@ -17,8 +17,8 @@ const isPrime = () => {
 
 const generateRound = () => {
   const n = randomNum(1, 100);
-  const question = `${n}`;
-  const correctAnswer = (isPrime) ? 'yes' : 'no';
+  const question = n;
+  const correctAnswer = isPrime(n) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
