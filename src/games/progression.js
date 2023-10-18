@@ -1,4 +1,4 @@
-import game from '../index.js';
+import runGame from '../index.js';
 import { getRandomIndex } from '../utils.js';
 
 const description = 'What number is missing in the progression?';
@@ -22,5 +22,5 @@ export default () => {
     progression.push(startNum + i * multiplier);
   }
 
-  game(description, generateRound);
+  runGameame(description, generateRound);
 };
