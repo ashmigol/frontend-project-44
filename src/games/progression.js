@@ -22,5 +22,5 @@ export default () => {
     progression.push(startNum + i * multiplier);
   }
 
-  runGameame(description, generateRound);
+  runGame(description, generateRound);
 };
