@@ -1,10 +1,23 @@
-import runGame from '../index.js';
-import { getRandomIndex } from '../utils.js';
+import game from '../index.js';
+import { getRandomNum, getRandomIndex } from '../utils.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateRound = (progress) => {
-  const index = getRandomIndex(progress.length);
+const setProgressArray = () => {
+  const startNum = getRandomNum(1, 10);
+  const multiplier = getRandomNum(1, 10);
+  const progress = [startNum];
+
+  for (let i = 0; i < 9; i += 1) {
+    progress.push(startNum + (i + 1) * multiplier);
+  }
+  return progress;
+};
+
+const generateRound = () => {
+
+  const progress = setProgressArray();
+  const index = getRandomIndex(progress);
   const correctAnswer = String(progress[index]);
   progress[index] = '..';
   const question = progress.join(' ');
@@ -13,14 +26,5 @@ const generateRound = (progress) => {
 };
 
 export default () => {
-  const startNum = 1;
-  const multiplier = 2;
-  const progressionLength = 10;
-  const progression = [];
-
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(startNum + i * multiplier);
-  }
-
-  runGame(description, generateRound);
+  game(description, generateRound);
 };
