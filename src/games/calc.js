@@ -19,8 +19,8 @@ const calculateAnswer = (num1, operator, num2) => {
 const generateRound = () => {
   const num1 = getRandomNum(1, 100);
   const num2 = getRandomNum(1, 100);
-  const operatorIndex = getRandomIndex(operators); 
-  const operator = operators[operatorIndex]; 
+  const operatorIndex = getRandomIndex(operators);
+  const operator = operators[operatorIndex];
   const question = `${num1} ${operator} ${num2}`;
   return [question, String(calculateAnswer(num1, operator, num2))];
 };

@@ -13,7 +13,6 @@ const setProgressArray = () => {
   }
   return progress;
 };
-
 const generateRound = () => {
 
   const progress = setProgressArray();
@@ -21,7 +20,6 @@ const generateRound = () => {
   const correctAnswer = String(progress[index]);
   progress[index] = '..';
   const question = progress.join(' ');
-
   return [question, correctAnswer];
 };
 
