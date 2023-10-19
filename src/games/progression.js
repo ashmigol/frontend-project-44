@@ -14,7 +14,6 @@ const setProgressArray = () => {
   return progress;
 };
 const generateRound = () => {
-
   const progress = setProgressArray();
   const index = getRandomIndex(progress);
   const correctAnswer = String(progress[index]);
